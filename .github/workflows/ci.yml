@@ -1,0 +1,115 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop, uat, sat]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  # ─── TypeScript + Lint ────────────────────────────────────────────────────
+  typecheck:
+    name: TypeScript & Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: TypeScript check
+        run: npm run typecheck
+      - name: ESLint
+        run: npm run lint
+
+  # ─── Tests ───────────────────────────────────────────────────────────────
+  test:
+    name: Jest Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: Run tests with coverage
+        run: npm run test:coverage
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+
+  # ─── Edge Functions (Deno) ────────────────────────────────────────────────
+  edge-functions:
+    name: Edge Function Tests (Deno)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+      - name: Test Edge Functions
+        run: deno test supabase/functions/__tests__/ --allow-env --allow-net
+
+  # ─── Security Audit ───────────────────────────────────────────────────────
+  security:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - name: npm audit (high+critical only)
+        run: npm audit --audit-level=high --production
+
+  # ─── Docs validation ─────────────────────────────────────────────────────
+  docs:
+    name: Docs Integrity Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check i18n key parity (pl.json vs en.json)
+        run: |
+          node -e "
+            const pl = require('./src/i18n/pl.json');
+            const en = require('./src/i18n/en.json');
+            const flatten = (obj, prefix='') =>
+              Object.keys(obj).reduce((acc, k) => {
+                const val = obj[k];
+                const key = prefix ? prefix+'.'+k : k;
+                return typeof val === 'object' && val !== null
+                  ? {...acc, ...flatten(val, key)}
+                  : {...acc, [key]: val};
+              }, {});
+            const plKeys = Object.keys(flatten(pl)).sort();
+            const enKeys = Object.keys(flatten(en)).sort();
+            const missingInEn = plKeys.filter(k => !enKeys.includes(k));
+            const missingInPl = enKeys.filter(k => !plKeys.includes(k));
+            if (missingInEn.length || missingInPl.length) {
+              if (missingInEn.length) console.error('Missing in en.json:', missingInEn);
+              if (missingInPl.length) console.error('Missing in pl.json:', missingInPl);
+              process.exit(1);
+            }
+            console.log('i18n keys match:', plKeys.length, 'keys OK');
+          "
+      - name: Check .env.example is up to date
+        run: |
+          if [ ! -f .env.example ]; then
+            echo "ERROR: .env.example missing"
+            exit 1
+          fi
+          echo ".env.example present ✓"
+      - name: Check no hardcoded secrets
+        run: |
+          if grep -r "supabase\.co" src/ --include="*.ts" --include="*.tsx" | grep -v "EXPO_PUBLIC_SUPABASE_URL\|example\|test"; then
+            echo "ERROR: Possible hardcoded Supabase URL found"
+            exit 1
+          fi
+          echo "No hardcoded secrets found ✓"

@@ -1,0 +1,198 @@
+{
+  "common": {
+    "error": "Błąd",
+    "cancel": "Anuluj",
+    "confirm": "Potwierdź",
+    "delete": "Usuń",
+    "save": "Zapisz",
+    "loading": "Ładowanie...",
+    "unknown_user": "Nieznany użytkownik",
+    "back": "Wróć",
+    "next": "Dalej",
+    "skip": "Pomiń",
+    "retry": "Spróbuj ponownie",
+    "check_connection": "Sprawdź połączenie internetowe"
+  },
+  "auth": {
+    "login": {
+      "title": "Zaloguj się",
+      "email_label": "Email",
+      "password_label": "Hasło",
+      "submit": "Zaloguj się",
+      "google": "Zaloguj przez Google",
+      "apple": "Zaloguj przez Apple",
+      "biometric": "Użyj Face ID / Odcisku palca",
+      "forgot_password": "Zapomniałem hasła",
+      "no_account": "Nie masz konta?",
+      "register_link": "Zarejestruj się"
+    },
+    "register": {
+      "title": "Utwórz konto",
+      "display_name_label": "Twoje imię",
+      "birth_year_label": "Rok urodzenia",
+      "parental_consent_required": "Potrzebujemy zgody rodzica lub opiekuna prawnego",
+      "parent_email_label": "Email rodzica / opiekuna"
+    },
+    "biometric": {
+      "reason_login": "Zaloguj się do KlassMate",
+      "reason_sensitive": "Potwierdź swoją tożsamość",
+      "fallback_label": "Użyj hasła",
+      "cancel_label": "Anuluj"
+    },
+    "trusted_device": {
+      "title": "Nowe urządzenie",
+      "message": "Zalogowano na nowym urządzeniu. Czy to Twoje urządzenie?",
+      "trust": "Tak, to moje urządzenie",
+      "no_trust": "Nie, wyloguj mnie",
+      "trust_info": "Na zaufanych urządzeniach pozostaniesz zalogowany. Na nieznanych urządzeniach zostaniesz automatycznie wylogowany po 4 godzinach.",
+      "last_seen": "Ostatnio aktywne",
+      "revoke": "Odwołaj dostęp",
+      "revoke_confirm": "Odwołać dostęp dla tego urządzenia? Zostaniesz na nim wylogowany.",
+      "revoked": "Urządzenie zostało odwołane",
+      "empty": "Brak zaufanych urządzeń"
+    },
+    "2fa": {
+      "title": "Weryfikacja dwuetapowa",
+      "enter_code": "Wpisz 6-cyfrowy kod z aplikacji authenticator",
+      "backup_code": "Użyj kodu zapasowego"
+    },
+    "session_expiring": "Twoja sesja wygaśnie za 30 minut. Zaloguj się ponownie, aby kontynuować."
+  },
+  "message": {
+    "input": {
+      "placeholder": "Napisz wiadomość w #{channelName}..."
+    },
+    "send": {
+      "label": "Wyślij",
+      "success": "Wiadomość wysłana",
+      "failed": "Nie można wysłać wiadomości"
+    },
+    "moderation": {
+      "pending": "Twoja wiadomość jest weryfikowana przez moderatora",
+      "rejected": "Wiadomość narusza zasady społeczności",
+      "trimmed": "Fragment Twojej wiadomości został usunięty przez moderatora",
+      "approved": "Twoja wiadomość została opublikowana"
+    },
+    "voice": {
+      "hold_to_record": "Przytrzymaj, aby nagrać",
+      "recording": "Nagrywanie...",
+      "too_long": "Maksymalny czas nagrania to {max}s"
+    },
+    "delete_confirm": "Usunąć tę wiadomość? Tej operacji nie można cofnąć.",
+    "report": "Zgłoś wiadomość"
+  },
+  "class": {
+    "create": "Utwórz klasę",
+    "join": "Dołącz do klasy",
+    "join_code_label": "Kod zaproszenia",
+    "join_code_hint": "6-znakowy kod od administratora klasy",
+    "leave_confirm": "Opuścić klasę {name}? Aby dołączyć ponownie, będziesz potrzebować kodu zaproszenia.",
+    "archive_confirm": "Zarchiwizować klasę {name}? Uczniowie nie będą mogli wysyłać nowych wiadomości.",
+    "archived_label": "Zarchiwizowana",
+    "no_classes": {
+      "title": "Nie należysz jeszcze do żadnej klasy",
+      "message": "Dołącz do klasy używając kodu zaproszenia lub utwórz nową.",
+      "create_action": "Utwórz klasę"
+    }
+  },
+  "moderation": {
+    "queue_title": "Kolejka moderacji",
+    "queue_empty": "Brak wiadomości do sprawdzenia",
+    "approve": "Zatwierdź całość",
+    "reject": "Odrzuć całość",
+    "trim": "Przytnij fragment",
+    "reject_confirm": "Odrzucić wiadomość? Nadawca otrzyma powiadomienie o naruszeniu zasad.",
+    "reason_profanity": "Możliwa wulgarność",
+    "reason_spam": "Możliwy spam",
+    "reason_reported": "Zgłoszone przez użytkownika",
+    "tooltip_queue": "Tu trafiają wiadomości wymagające sprawdzenia. Tylko admini widzą tę sekcję."
+  },
+  "notifications": {
+    "new_message": "Nowa wiadomość w #{channel}",
+    "mention": "{sender} wspomniał o Tobie",
+    "dm": "Nowa wiadomość od {sender}",
+    "join_request": "{name} chce dołączyć do klasy",
+    "join_approved": "Twoja prośba o dołączenie została zatwierdzona",
+    "join_rejected": "Twoja prośba o dołączenie została odrzucona",
+    "message_rejected": "Twoja wiadomość narusza zasady społeczności",
+    "message_trimmed": "Fragment Twojej wiadomości został usunięty"
+  },
+  "notes": {
+    "title": "Moje notatki",
+    "new": "Nowa notatka",
+    "ocr_button": "Skanuj z zeszytu (OCR)",
+    "ocr_processing": "Rozpoznajemy tekst...",
+    "ocr_success": "Tekst rozpoznany — sprawdź i popraw przed zapisem",
+    "ocr_failed": "Nie udało się rozpoznać tekstu. Spróbuj przy lepszym oświetleniu.",
+    "ocr_tooltip": "Zrób zdjęcie strony z zeszytu — zamienimy je na tekst do edycji.",
+    "empty": {
+      "title": "Brak notatek",
+      "message": "Utwórz pierwszą notatkę lub zeskanuj stronę z zeszytu."
+    }
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "account": "Konto",
+    "notifications": "Powiadomienia",
+    "appearance": "Wygląd",
+    "privacy": "Prywatność i bezpieczeństwo",
+    "backup": "Kopia zapasowa",
+    "logs": "Logi aplikacji",
+    "help": "Pomoc i FAQ",
+    "logout": "Wyloguj",
+    "delete_account": "Usuń konto",
+    "delete_account_confirm": "Czy na pewno chcesz usunąć konto? Wszystkie Twoje dane zostaną trwale usunięte. Tej operacji nie można cofnąć.",
+    "logs_info": "Wyświetlane są tylko błędy i ostrzeżenia. Brak treści wiadomości ani danych osobowych.",
+    "logs_send_report": "Wyślij raport do autora",
+    "logs_send_confirm": "Raport zawiera kody błędów i informacje techniczne. Nie zawiera Twoich wiadomości ani danych osobowych.",
+    "logs_sent": "Raport wysłany. Dziękujemy za pomoc w ulepszaniu aplikacji.",
+    "logs_clear_confirm": "Wyczyścić wszystkie logi? Tej operacji nie można cofnąć.",
+    "logs_cleared": "Logi wyczyszczone"
+  },
+  "onboarding": {
+    "skip": "Pomiń",
+    "slide1": {
+      "title": "Witaj w KlassMate",
+      "text": "Bezpieczne miejsce do wymiany informacji o zadaniach domowych. Bez chaosu, ze zorganizowanymi kanałami przedmiotowymi."
+    },
+    "slide2": {
+      "title": "Kanały przedmiotowe",
+      "text": "Każdy przedmiot ma swój kanał. Wątki pomagają skupić rozmowę na konkretnym zadaniu."
+    },
+    "slide3": {
+      "title": "Bezpieczne środowisko",
+      "text": "Automatyczna moderacja i administratorzy klasy dbają o to, by wszystko było w porządku."
+    },
+    "slide4": {
+      "title": "Notatki i OCR",
+      "text": "Zrób zdjęcie strony z zeszytu — aplikacja zamieni je w tekst, który możesz edytować i zapisać."
+    }
+  },
+  "reminders": {
+    "title": "Przypomnienia",
+    "new": "Nowe przypomnienie",
+    "title_label": "Tytuł",
+    "note_label": "Notatka (opcjonalnie)",
+    "date_label": "Data i godzina",
+    "repeat_label": "Powtarzaj",
+    "repeat_none": "Nie",
+    "repeat_daily": "Codziennie",
+    "repeat_weekly": "Co tydzień",
+    "empty": {
+      "title": "Brak przypomnień",
+      "message": "Dodaj przypomnienie o nadchodzącym zadaniu lub sprawdzianie."
+    },
+    "delete_confirm": "Usunąć to przypomnienie?"
+  },
+  "upload": {
+    "too_large": "Plik jest za duży. Maksymalny rozmiar to {max} MB.",
+    "success": "Plik dodany pomyślnie",
+    "failed": "Nie udało się dodać pliku"
+  },
+  "errors": {
+    "no_connection": "Brak połączenia z internetem. Sprawdź Wi-Fi lub dane mobilne.",
+    "session_expired": "Sesja wygasła. Zaloguj się ponownie.",
+    "unknown": "Wystąpił nieoczekiwany błąd. Spróbuj ponownie.",
+    "screenshot_warning": "Pamiętaj o ochronie prywatności swoich kolegów."
+  }
+}

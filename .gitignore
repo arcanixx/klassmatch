@@ -141,3 +141,37 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# KlassMate specific
+.env.development
+.env.production
+.env.local
+*.env
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Assets (generowane/binarne - nie commituj)
+assets/icons/*.png
+assets/splash/*.png
+assets/store/*.png
+assets/animations/*.json
+# Wyjątek: SVG fallbacki zawsze w repo
+!assets/**/*.svg
+
+# Logs aplikacji (runtime, nie projektowe)
+logs/runtime/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,183 @@
+{
+  "common": {
+    "error": "Error",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "save": "Save",
+    "loading": "Loading...",
+    "unknown_user": "Unknown user",
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip",
+    "retry": "Try again",
+    "check_connection": "Check your internet connection"
+  },
+  "auth": {
+    "login": {
+      "title": "Log in",
+      "email_label": "Email",
+      "password_label": "Password",
+      "submit": "Log in",
+      "google": "Continue with Google",
+      "apple": "Continue with Apple",
+      "biometric": "Use Face ID / Fingerprint",
+      "forgot_password": "Forgot password",
+      "no_account": "No account?",
+      "register_link": "Sign up"
+    },
+    "register": {
+      "title": "Create account",
+      "display_name_label": "Your name",
+      "birth_year_label": "Year of birth",
+      "parental_consent_required": "We need consent from a parent or legal guardian",
+      "parent_email_label": "Parent / guardian email"
+    },
+    "biometric": {
+      "reason_login": "Log in to KlassMate",
+      "reason_sensitive": "Confirm your identity",
+      "fallback_label": "Use password",
+      "cancel_label": "Cancel"
+    },
+    "trusted_device": {
+      "title": "New device",
+      "message": "You've logged in on a new device. Is this your device?",
+      "trust": "Yes, this is my device",
+      "no_trust": "No, log me out",
+      "trust_info": "On trusted devices you stay logged in. On unknown devices you'll be logged out after 4 hours of inactivity.",
+      "last_seen": "Last active",
+      "revoke": "Revoke access",
+      "revoke_confirm": "Revoke access for this device? You will be logged out on it.",
+      "revoked": "Device access revoked",
+      "empty": "No trusted devices"
+    },
+    "2fa": {
+      "title": "Two-factor verification",
+      "enter_code": "Enter the 6-digit code from your authenticator app",
+      "backup_code": "Use a backup code"
+    },
+    "session_expiring": "Your session will expire in 30 minutes. Log in again to continue."
+  },
+  "message": {
+    "input": {
+      "placeholder": "Message #{channelName}..."
+    },
+    "send": {
+      "label": "Send",
+      "success": "Message sent",
+      "failed": "Could not send message"
+    },
+    "moderation": {
+      "pending": "Your message is being reviewed by a moderator",
+      "rejected": "Message violates community guidelines",
+      "trimmed": "Part of your message was removed by a moderator",
+      "approved": "Your message has been published"
+    },
+    "voice": {
+      "hold_to_record": "Hold to record",
+      "recording": "Recording...",
+      "too_long": "Maximum recording length is {max}s"
+    },
+    "delete_confirm": "Delete this message? This cannot be undone.",
+    "report": "Report message"
+  },
+  "class": {
+    "create": "Create class",
+    "join": "Join class",
+    "join_code_label": "Invite code",
+    "join_code_hint": "6-character code from your class admin",
+    "leave_confirm": "Leave {name}? You'll need an invite code to rejoin.",
+    "archive_confirm": "Archive {name}? Students won't be able to send new messages.",
+    "archived_label": "Archived",
+    "no_classes": {
+      "title": "You're not in any class yet",
+      "message": "Join a class using an invite code or create a new one.",
+      "create_action": "Create class"
+    }
+  },
+  "moderation": {
+    "queue_title": "Moderation queue",
+    "queue_empty": "No messages to review",
+    "approve": "Approve",
+    "reject": "Reject",
+    "trim": "Trim content",
+    "reject_confirm": "Reject this message? The sender will be notified.",
+    "reason_profanity": "Possible profanity",
+    "reason_spam": "Possible spam",
+    "reason_reported": "Reported by user",
+    "tooltip_queue": "Messages that need review appear here. Only admins can see this section."
+  },
+  "notifications": {
+    "new_message": "New message in #{channel}",
+    "mention": "{sender} mentioned you",
+    "dm": "New message from {sender}",
+    "join_request": "{name} wants to join the class",
+    "join_approved": "Your request to join was approved",
+    "join_rejected": "Your request to join was declined",
+    "message_rejected": "Your message violates community guidelines",
+    "message_trimmed": "Part of your message was removed"
+  },
+  "notes": {
+    "title": "My notes",
+    "new": "New note",
+    "ocr_button": "Scan from notebook (OCR)",
+    "ocr_processing": "Recognising text...",
+    "ocr_success": "Text recognised — review and edit before saving",
+    "ocr_failed": "Could not recognise text. Try with better lighting.",
+    "ocr_tooltip": "Take a photo of a notebook page — we'll convert it to editable text.",
+    "empty": {
+      "title": "No notes yet",
+      "message": "Create your first note or scan a notebook page."
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "account": "Account",
+    "notifications": "Notifications",
+    "appearance": "Appearance",
+    "privacy": "Privacy & security",
+    "backup": "Backup",
+    "logs": "App logs",
+    "help": "Help & FAQ",
+    "logout": "Log out",
+    "delete_account": "Delete account",
+    "delete_account_confirm": "Are you sure you want to delete your account? All your data will be permanently deleted. This cannot be undone.",
+    "logs_info": "Only errors and warnings are shown. No message content or personal data.",
+    "logs_send_report": "Send report to developer",
+    "logs_send_confirm": "The report contains error codes and technical information. It does not contain your messages or personal data.",
+    "logs_sent": "Report sent. Thank you for helping improve the app.",
+    "logs_clear_confirm": "Clear all logs? This cannot be undone.",
+    "logs_cleared": "Logs cleared"
+  },
+  "onboarding": {
+    "skip": "Skip",
+    "slide1": { "title": "Welcome to KlassMate", "text": "A safe place to share homework info. Organised, moderated, built for your class." },
+    "slide2": { "title": "Subject channels", "text": "Each subject has its own channel. Threads keep conversations focused on specific assignments." },
+    "slide3": { "title": "Safe environment", "text": "Automatic moderation and class admins keep everything in order." },
+    "slide4": { "title": "Notes & OCR", "text": "Take a photo of your notebook page — the app converts it to editable text." }
+  },
+  "reminders": {
+    "title": "Reminders",
+    "new": "New reminder",
+    "title_label": "Title",
+    "note_label": "Note (optional)",
+    "date_label": "Date and time",
+    "repeat_label": "Repeat",
+    "repeat_none": "Never",
+    "repeat_daily": "Daily",
+    "repeat_weekly": "Weekly",
+    "empty": { "title": "No reminders", "message": "Add a reminder for an upcoming assignment or test." },
+    "delete_confirm": "Delete this reminder?"
+  },
+  "upload": {
+    "too_large": "File is too large. Maximum size is {max} MB.",
+    "success": "File added successfully",
+    "failed": "Could not add file"
+  },
+  "errors": {
+    "no_connection": "No internet connection. Check your Wi-Fi or mobile data.",
+    "session_expired": "Session expired. Please log in again.",
+    "unknown": "An unexpected error occurred. Please try again.",
+    "screenshot_warning": "Please respect your classmates' privacy."
+  }
+}
