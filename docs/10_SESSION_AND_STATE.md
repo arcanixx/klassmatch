@@ -1,12 +1,9 @@
-<!-- =============================================================================
- FILE: 10_SESSION_AND_STATE.md
- PATH: docs/10_SESSION_AND_STATE.md
- VERSION: 0.1.0
- PURPOSE: Zarządzanie stanem aplikacji — offline mode, optymistyczne aktualizacje,
-          Zustand store design, konflikty sesji między urządzeniami.
- FUNCTIONS: -
- DEPENDS ON: docs/01_ARCHITECTURE.md, docs/04_SECURITY.md
- ============================================================================= -->
+# 10_SESSION_AND_STATE.md
+# Path: docs/10_SESSION_AND_STATE.md
+# Purpose: State management — offline mode, optimistic updates, Zustand store design, session conflicts
+# Depends on: 01_ARCHITECTURE.md, 04_SECURITY.md
+
+---
 
 # 10 — Zarządzanie sesją i stanem aplikacji
 

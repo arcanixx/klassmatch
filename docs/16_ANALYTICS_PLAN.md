@@ -1,7 +1,7 @@
 # 16 — Analytics Plan
-# Path: docs/16_analytics_plan.md
+# Path: docs/16_ANALYTICS_PLAN.md
 # Purpose: Jakie eventy trackować, jakie metryki mierzyć, privacy-first approach
-# Depends on: docs/00_PROJECT_OVERVIEW.md, docs/08_ROADMAP_AND_MONETISATION.md, docs/11_user_stories_and_ac.md
+# Depends on: docs/00_PROJECT_OVERVIEW.md, docs/08_ROADMAP_AND_MONETISATION.md, docs/11_USER_STORIES.md
 # Status: MVP v0.1 (Phase 1)
 
 ---

@@ -1,5 +1,5 @@
 # 14 — Risk Register
-# Path: docs/14_risk_register.md
+# Path: docs/14_RISK_REGISTER.md
 # Purpose: Top ryzyk projektowych + mitigacja + właściciel + priorytet
 # Depends on: docs/00_PROJECT_OVERVIEW.md, docs/01_ARCHITECTURE.md, docs/05_LEGAL_COMPLIANCE.md
 # Status: MVP v0.1 (Phase 1)

@@ -1,7 +1,7 @@
 # 13 — API Contract (Edge Functions + Zod Schemas)
-# Path: docs/13_api_contract.md
+# Path: docs/13_API_CONTRACT.md
 # Purpose: Kompletne schematy wejścia/wyjścia dla wszystkich Edge Functions (Zod) + REST conventions
-# Depends on: docs/01_ARCHITECTURE.md, docs/01b_ARCHITECTURE_SUPPLEMENT.md, docs/11_user_stories_and_ac.md
+# Depends on: docs/01_ARCHITECTURE.md, docs/01b_ARCHITECTURE_SUPPLEMENT.md, docs/11_USER_STORIES.md
 # Status: MVP v0.1 (Phase 1)
 
 ---

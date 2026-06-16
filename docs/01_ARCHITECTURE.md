@@ -139,7 +139,7 @@ CREATE TABLE threads (
 CREATE TABLE messages (
   id             uuid PRIMARY KEY DEFAULT gen_random_uuid(),
   thread_id      uuid REFERENCES threads(id) ON DELETE CASCADE,
-  channel_id     uuid NOT NULL REFERENCES channels(id) ON DELETE CASCADE,
+  channel_id     uuid REFERENCES channels(id) ON DELETE CASCADE,
   dm_id          uuid REFERENCES direct_conversations(id) ON DELETE CASCADE,
   sender_id      uuid NOT NULL REFERENCES profiles(id),
   content        text,                     -- nullable if voice-only message
@@ -152,10 +152,10 @@ CREATE TABLE messages (
   edited_at      timestamptz,
   deleted_at     timestamptz,              -- soft delete
   created_at     timestamptz NOT NULL DEFAULT now(),
-  -- A message must belong to either a channel OR a DM, not both
+  -- A message must belong to exactly one of: channel OR DM, never both, never neither
   CONSTRAINT message_target_check CHECK (
     (channel_id IS NOT NULL AND dm_id IS NULL) OR
-    (dm_id IS NOT NULL AND channel_id IS NOT NULL)
+    (dm_id IS NOT NULL AND channel_id IS NULL)
   )
 );
 ```
@@ -261,6 +261,42 @@ CREATE TABLE audit_log (
 );
 -- Append-only. No updates or deletes ever.
 ```
+
+---
+
+## 2a. Updated-At Triggers (Auto-Maintenance)
+
+Tables with `updated_at` columns require a trigger to auto-update on row changes. Add this function and triggers in migration `0003_functions_triggers.sql`:
+
+```sql
+-- Trigger function: auto-update updated_at
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = now();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Apply to all tables with updated_at
+CREATE TRIGGER profiles_updated_at
+  BEFORE UPDATE ON profiles
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER classes_updated_at
+  BEFORE UPDATE ON classes
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER threads_updated_at
+  BEFORE UPDATE ON threads
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER personal_notes_updated_at
+  BEFORE UPDATE ON personal_notes
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+```
+
+> **Note:** `messages` has `edited_at` (manual, set by app logic) and `deleted_at` (soft delete), not `updated_at`. `class_members` uses `approved_at` and `joined_at` as audit timestamps. `channels` uses `is_archived` + `created_at` only.
 
 ---
 
@@ -503,16 +539,25 @@ klassmatch/
 │       └── dev_seed.sql
 │
 ├── docs/
-│   ├── 00_PROJECT_OVERVIEW.md        # This file set
-│   ├── 01_ARCHITECTURE.md
-│   ├── 02_CODE_STANDARDS.md
-│   ├── 03_AI_RULES.md
-│   ├── 04_SECURITY.md
-│   ├── 05_LEGAL_COMPLIANCE.md
-│   ├── 06_FEATURES_SPEC.md
-│   ├── 07_TESTING_STRATEGY.md
-│   ├── 08_DEBUG_DEV_MODE.md
-│   └── 09_MONETISATION.md
+│   ├── 00_PROJECT_OVERVIEW.md        # Master assumptions, goals, scope
+│   ├── 01_ARCHITECTURE.md            # System architecture, data models, API contracts
+│   ├── 01b_ARCHITECTURE_SUPPLEMENT.md # Sorting, reminders, modals, in-app logs, error reporting
+│   ├── 02_CODE_STANDARDS.md          # Coding conventions, file headers, formatting
+│   ├── 03_AI_RULES.md                # Rules for AI coding assistants
+│   ├── 04_SECURITY.md                # Security model, biometrics, session management
+│   ├── 05_LEGAL_COMPLIANCE.md      # RODO/GDPR, children's data, ToS
+│   ├── 06_FEATURES_SPEC.md           # Detailed UX flows, help system, notifications
+│   ├── 07_TESTING_STRATEGY.md        # Testing strategy, debug mode, mock system
+│   ├── 08_ROADMAP_AND_MONETISATION.md # MVP roadmap, phased delivery, monetisation
+│   ├── 09_NOTIFICATIONS_AND_REMINDERS.md # Push notifications, in-app, reminders
+│   ├── 10_SESSION_AND_STATE.md      # State management, offline mode, Zustand stores
+│   ├── 11_USER_STORIES.md           # Testable user stories with acceptance criteria
+│   ├── 12_MVP_SCOPE.md              # MVP scope boundary, anti-scope-creep
+│   ├── 13_API_CONTRACT.md           # Zod schemas for all Edge Functions
+│   ├── 14_RISK_REGISTER.md          # Project risks with mitigation plans
+│   ├── 15_COMPETITIVE_ANALYSIS.md   # Competitor matrix, SWOT, positioning
+│   ├── 16_ANALYTICS_PLAN.md         # Privacy-first analytics, events, metrics
+│   └── 17_DATA_SEED.md              # Test data strategy, Faker seeding, demo
 │
 ├── __tests__/
 │   ├── unit/

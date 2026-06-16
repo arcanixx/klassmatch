@@ -1,7 +1,7 @@
 # 17 — Data Seed Strategy
-# Path: docs/17_data_seed_strategy.md
+# Path: docs/17_DATA_SEED.md
 # Purpose: Skąd wziąć dane testowe, jak je przygotować, jak seedować Supabase (dev/test)
-# Depends on: docs/01_ARCHITECTURE.md, docs/11_user_stories_and_ac.md
+# Depends on: docs/01_ARCHITECTURE.md, docs/11_USER_STORIES.md
 # Status: MVP v0.1 (Phase 1)
 
 ---

@@ -1,5 +1,5 @@
 # 15 — Competitive Analysis
-# Path: docs/15_competitive_analysis.md
+# Path: docs/15_COMPETITIVE_ANALYSIS.md
 # Purpose: Analiza konkurencji (direct + indirect), SWOT, feature gap, strategic recommendations
 # Depends on: docs/00_PROJECT_OVERVIEW.md, docs/08_ROADMAP_AND_MONETISATION.md
 # Status: MVP v0.1 (Phase 1)

@@ -1,5 +1,5 @@
 # 11 — User Stories & Acceptance Criteria
-# Path: docs/11_user_stories_and_ac.md
+# Path: docs/11_USER_STORIES.md
 # Purpose: Testowalne historyjki użytkownika z Acceptance Criteria per MVP feature
 # Depends on: docs/00_PROJECT_OVERVIEW.md, docs/01_ARCHITECTURE.md, docs/06_FEATURES_SPEC.md
 # Status: MVP v0.1 (Phase 1)
@@ -170,7 +170,7 @@
 ### Acceptance Criteria — Kolejka moderacji
 - [ ] `[P0]` Admin widzi ikonę tarczy z czerwonym badge'm (liczba oczekujących) w sidebarze.
 - [ ] `[P0]` Lista wiadomości w kolejce: nadawca, kanał, treść (3 linie), powód flagi, pewność AI.
-- [ ] `[P0]` Admin może „Zatwierdź” — `moderation_status` = `approved`, broadcast do kanału.
+- [ ] `[P0]` Admin może „Zatwierdzić” — `moderation_status` = `approved`, broadcast do kanału.
 - [ ] `[P0]` Admin może „Odrzucić” — `moderation_status` = `rejected`, nadawca dostaje powiadomienie.
 - [ ] `[P0]` Admin może „Przytnij” — zaznacza fragment do usunięcia, podgląd przyciętej wersji, zatwierdza. `moderation_status` = `trimmed`, oryginał zachowany w `original_content`.
 - [ ] `[P0]` Nadawca przyciętej wiadomości dostaje toast: „Fragment Twojej wiadomości został usunięty przez moderatora”.

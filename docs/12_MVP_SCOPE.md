@@ -1,7 +1,7 @@
 # 12 — MVP Scope Boundary
-# Path: docs/12_mvp_scope_boundary.md
+# Path: docs/12_MVP_SCOPE.md
 # Purpose: Jasne określenie co wchodzi w v0.1 (MVP), a co jest celowo poza zakresem
-# Depends on: docs/00_PROJECT_OVERVIEW.md, docs/11_user_stories_and_ac.md
+# Depends on: docs/00_PROJECT_OVERVIEW.md, docs/11_USER_STORIES.md
 # Status: MVP v0.1 (Phase 1 — Foundation)
 
 ---
@@ -184,7 +184,7 @@ Aby oznaczyć MVP jako „gotowe do beta testu”:
 
 | # | Kryterium | Jak zweryfikować |
 |---|-----------|------------------|
-| 1 | Wszystkie US oznaczone `[P0]` w `docs/11_user_stories_and_ac.md` są zaimplementowane | Checklist w tym dokumencie |
+| 1 | Wszystkie US oznaczone `[P0]` w `docs/11_USER_STORIES.md` są zaimplementowane | Checklist w tym dokumencie |
 | 2 | Testy E2E przechodzą dla głównego flow: rejestracja → utworzenie klasy → zaproszenie 2 uczniów → wysłanie wiadomości → moderacja → odpowiedź | Playwright / Detox test |
 | 3 | Moderacja Edge Function przechodzi testy: profanity PL+EN, borderline queue, approve/reject/trim | Unit tests w Deno |
 | 4 | RLS policies przechodzą penetration test (próba odczytu wiadomości z innej klasy, próba odczytu DM przez admina) | SQL testy w CI |

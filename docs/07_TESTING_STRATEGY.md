@@ -1,5 +1,5 @@
-# 07_TESTING_AND_DEBUG.md
-# Path: docs/07_TESTING_AND_DEBUG.md
+# 07_TESTING_STRATEGY.md
+# Path: docs/07_TESTING_STRATEGY.md
 # Purpose: Testing strategy, DEV-only debug panel, mock system specification
 # Depends on: 01_ARCHITECTURE.md, 02_CODE_STANDARDS.md
 
@@ -236,38 +236,38 @@ The debug tab appears in the bottom tab bar only in DEBUG_MODE:
 #### `debug/index.tsx` — Dashboard
 ```
 ┌──────────────────────────────────────────────┐
-│  🐛 KlassMate Debug Panel                   │
+│  🐛 KlassMate Debug Panel                     │
 │  Build: 0.1.0 | Env: development             │
-│  Supabase: eu-central-1 (Frankfurt)          │
+│  Supabase: eu-central-1 (Frankfurt)            │
 │  User: jan@test.pl (id: abc-123)             │
 │                                              │
-│  ── Mock Controls ──                         │
-│  [Mock: Moderation]  ● ON                   │
-│  [Mock: Push Notifs] ○ OFF                  │
-│  [Mock: OCR]         ○ OFF                  │
+│  ── Mock Controls ──                           │
+│  [Mock: Moderation]  ● ON                     │
+│  [Mock: Push Notifs] ○ OFF                    │
+│  [Mock: OCR]         ○ OFF                    │
 │                                              │
 │  ── Scenarios ──                             │
-│  [Simulate: Message Rejected]               │
-│  [Simulate: Message In Review]              │
-│  [Simulate: Admin Moderation Queue (5)]     │
-│  [Simulate: Session Expiry]                 │
-│  [Simulate: Network Offline]                │
-│  [Simulate: Push Notification]              │
-│  [Simulate: Biometric Prompt]               │
-│  [Simulate: OCR Success]                    │
-│  [Simulate: OCR Failure]                    │
-│  [Simulate: File Upload Progress]           │
-│  [Simulate: Parental Consent Pending]       │
-│                                             │
-│  ── Data ──                                 │
-│  [Load Seed Class Data]                     │
-│  [Clear All Local State]                    │
-│  [Reset Seen Tooltips]                      │
-│  [Reset Onboarding]                         │
-│                                             │
-│  ── Logs ──                                 │
-│  [View Error Log (last 50)]                 │
-│  [Copy Log to Clipboard]                    │
+│  [Simulate: Message Rejected]                 │
+│  [Simulate: Message In Review]                │
+│  [Simulate: Admin Moderation Queue (5)]       │
+│  [Simulate: Session Expiry]                   │
+│  [Simulate: Network Offline]                  │
+│  [Simulate: Push Notification]                │
+│  [Simulate: Biometric Prompt]                 │
+│  [Simulate: OCR Success]                      │
+│  [Simulate: OCR Failure]                      │
+│  [Simulate: File Upload Progress]             │
+│  [Simulate: Parental Consent Pending]         │
+│                                               │
+│  ── Data ──                                   │
+│  [Load Seed Class Data]                       │
+│  [Clear All Local State]                      │
+│  [Reset Seen Tooltips]                        │
+│  [Reset Onboarding]                           │
+│                                               │
+│  ── Logs ──                                   │
+│  [View Error Log (last 50)]                   │
+│  [Copy Log to Clipboard]                      │
 └──────────────────────────────────────────────┘
 ```
 

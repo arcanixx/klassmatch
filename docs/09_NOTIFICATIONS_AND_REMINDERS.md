@@ -1,13 +1,9 @@
-<!-- =============================================================================
- FILE: 09_NOTIFICATIONS_AND_REMINDERS.md
- PATH: docs/09_NOTIFICATIONS_AND_REMINDERS.md
- VERSION: 0.1.0
- PURPOSE: Pełna specyfikacja systemu powiadomień push, in-app i przypomnień (Reminders).
- FUNCTIONS: -
- DEPENDS ON: docs/01_ARCHITECTURE.md, docs/01b_ARCHITECTURE_SUPPLEMENT.md, docs/06_FEATURES_SPEC.md
- UWAGA: Przypomnienia to faza 2 (FEATURES.REMINDERS = false w MVP).
-         Powiadomienia push są w MVP (FEATURES.PUSH_NOTIFICATIONS = true).
- ============================================================================= -->
+# 09_NOTIFICATIONS_AND_REMINDERS.md
+# Path: docs/09_NOTIFICATIONS_AND_REMINDERS.md
+# Purpose: Full specification of push notifications, in-app notifications, and reminders system
+# Depends on: 01_ARCHITECTURE.md, 01b_ARCHITECTURE_SUPPLEMENT.md, 06_FEATURES_SPEC.md
+
+---
 
 # 09 — Powiadomienia i Przypomnienia
 

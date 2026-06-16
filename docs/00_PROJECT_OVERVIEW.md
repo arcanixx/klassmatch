@@ -160,7 +160,7 @@ Based on research (June 2026):
 
 ### 🔴 Critical (must answer before writing code)
 
-1. **App name:** "KlassMate" is working name. Do you have a preferred name? This affects package IDs, domain, Supabase project name.
+1. **App name:** "KlassMate" is working name. Repository slug is `klassmatch`. Do you have a preferred final name? This affects package IDs, domain, Supabase project name.
 
 2. **Parental consent mechanism:** For users under 16, RODO requires verifiable parental consent. Options:
    - **A)** Email sent to parent-provided address, parent clicks confirmation link *(simplest, legally borderline)*
